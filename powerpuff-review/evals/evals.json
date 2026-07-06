@@ -1,0 +1,45 @@
+{
+  "skill_name": "powerpuff-review",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Usa a revisao das Powerpuff Girls nesse arquivo aqui: fixtures/usar-item.ts -- e um comando novo do RPGMaster pra usar item do inventario.",
+      "expected_output": "Revisao estruturada em 4 secoes (Blossom/Bubbles/Buttercup/Sintese) que identifica SQL injection, falta de checagem de nulo, e mistura de logica de regras no handler do Discord.",
+      "files": ["fixtures/usar-item.ts"],
+      "expectations": [
+        "A revisao contem as quatro secoes: Blossom, Bubbles, Buttercup e uma sintese final",
+        "A secao da Buttercup identifica a vulnerabilidade de SQL injection causada por interpolacao de string nas queries",
+        "A secao da Buttercup identifica a falta de tratamento para o caso em que o item nao e encontrado (acesso a data.rows[0] sem checagem de nulo/undefined)",
+        "A secao da Blossom aponta que a logica de regras de jogo (cura, dano, buff) esta misturada diretamente no handler do comando Discord, em vez de estar numa camada separada (rules-engine)",
+        "A secao da Bubbles aponta nomes de variaveis pouco claros (como x, tmp) e/ou falta de comentarios explicando decisoes nao obvias",
+        "A sintese final termina com um veredito claro (aprovado / aprovado com ressalvas / precisa de trabalho)",
+        "O texto da revisao usa vozes diferenciadas para cada persona, nao e o mesmo conteudo repetido tres vezes com rotulos diferentes"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Queria uma revisao bem completa desse arquivo, cobrindo arquitetura, legibilidade e bugs/seguranca em perspectivas separadas: fixtures/usar-item.ts",
+      "expected_output": "Mesmo sem citar as Powerpuff Girls, a revisao deve reconhecer que o pedido se encaixa no skill e produzir tres perspectivas separadas cobrindo os mesmos problemas do arquivo.",
+      "files": ["fixtures/usar-item.ts"],
+      "expectations": [
+        "A resposta e estruturada em tres perspectivas claramente separadas, correspondendo a arquitetura, legibilidade/DX e bugs/seguranca",
+        "A perspectiva de bugs/seguranca identifica a vulnerabilidade de SQL injection",
+        "A perspectiva de arquitetura aponta a mistura de regras de jogo com o handler do comando Discord",
+        "A resposta chega a um veredito final consolidado ao final"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Roda a revisao das Meninas Superpoderosas nas minhas mudancas nao commitadas aqui: diff-repo (repositorio git com mudancas nao commitadas em src/combate.ts)",
+      "expected_output": "Revisao que foca apenas no diff (funcoes novas adicionadas), aponta duplicacao de logica, o try/catch que engole excecao, o campo nao utilizado, e mostra divergencia de opiniao entre as personas sobre ao menos um ponto.",
+      "files": ["diff-repo/src/combate.ts"],
+      "expectations": [
+        "A revisao foca nas mudancas do diff (funcoes novas: calcularDanoCritico, executarAtaque, chanceDeEsquiva), nao trata o arquivo inteiro como se tudo fosse novo",
+        "A secao da Blossom aponta a duplicacao de logica entre calcularDano e calcularDanoCritico",
+        "A secao da Buttercup (ou equivalente) sinaliza o bloco try/catch que engole a excecao silenciosamente (dano = 0) como um risco a ser observado",
+        "A sintese menciona explicitamente uma divergencia de opiniao entre as personas sobre a severidade de algum ponto, nao apenas lista consenso",
+        "E identificado que o campo esquiva/funcao chanceDeEsquiva foi adicionado mas nao esta sendo usado em nenhum calculo de combate (logica incompleta)"
+      ]
+    }
+  ]
+}
