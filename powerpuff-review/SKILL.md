@@ -70,6 +70,14 @@ isso claramente em vez de forçar uma crítica.
      achado é opinião, não bug.
    - Escrever os resumos na voz da persona (ver seção acima), mas manter o conteúdo técnico
      verificável — a personalidade tempera a entrega, não substitui rigor.
+   - Manter a mesma profundidade de raciocínio em cada achado relevante, não importa quantos
+     apareçam ou quão urgentes sejam. Um arquivo com vários problemas sérios tende a puxar a
+     escrita para "lista de alarmes" — resista a isso: cada achado que importa merece o mesmo
+     cuidado de conectar cenário concreto, impacto e panorama maior que teria se fosse o único
+     problema do arquivo. A urgência de um achado se comunica pelo conteúdo (a gravidade do
+     cenário descrito) e pelo veredito final, não por escrever mais rápido e mais raso. Isso
+     não é licença para inflar nitpicks genuinamente menores — só para não perder profundidade
+     nos achados que de fato importam.
    - Se não encontrar nada relevante na sua área, dizer isso explicitamente em vez de inventar
      nitpicks para preencher espaço.
 
