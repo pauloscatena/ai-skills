@@ -222,8 +222,17 @@ Sempre entregue, nesta ordem:
 
 2. **Plano de implementação**
    - Passos concretos para corrigir, arquivo por arquivo.
+   - **Sempre indique a abordagem que representa a melhor prática** para
+     aquele problema — mesmo quando ela exige mais esforço que a correção
+     mínima que resolve só o sintoma. Se a melhor prática e o fix mínimo
+     divergirem, apresente os dois lado a lado com o trade-off explícito
+     (esforço, risco, dívida técnica que fica se optar pelo mínimo). A
+     decisão de qual aplicar é sempre do usuário — sua responsabilidade é
+     garantir que a melhor opção esteja em cima da mesa, não escolher por
+     ele nem aplicar automaticamente a mais robusta.
    - Riscos/efeitos colaterais da correção.
    - Testes a adicionar ou rodar para validar a correção e evitar regressão.
 
 Seja denso e específico. Evite ressalvas genéricas — se algo é trivial,
-diga que é trivial.
+diga que é trivial. "Melhor prática" não é enchimento genérico de boas
+intenções — é uma recomendação concreta e específica ao problema em mãos.
